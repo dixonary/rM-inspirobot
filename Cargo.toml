@@ -1,0 +1,12 @@
+[package]
+name = "inspirobot"
+version = "0.1.0"
+authors = ["Alex <alex@dixonary.co.uk>"]
+edition = "2018"
+
+[dependencies]
+dbus = "0.9.1"
+dbus-tree = "0.9.0"
+reqwest = { version = "0.11.0", features = ["blocking"] }
+openssl = { version = "0.10", features = ["vendored"] }
+backoff = "0.2.1"

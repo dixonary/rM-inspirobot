@@ -1,0 +1,7 @@
+convert \
+    \( -size 1404x1872 xc:white \) \
+    \( -fill white -font "/usr/share/fonts/ttf/noto/NotoSerif-Regular.ttf" \
+       -pointsize 30 -gravity center -draw "text 0,0 'reMarkable suspended - press button to continue'" \) \
+    \( -size 1404x100 xc:black -gravity south \) -composite \
+    \( -size 1320x1320 xc:black -gravity center \) -composite \
+    template.bmp

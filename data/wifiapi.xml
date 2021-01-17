@@ -1,0 +1,84 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="codes.eeems.oxide1.Wifi">
+    <property name="state" type="i" access="read"/>
+    <property name="bSSs" type="ao" access="read"/>
+    <property name="link" type="i" access="read"/>
+    <property name="network" type="o" access="read"/>
+    <property name="networks" type="ao" access="read"/>
+    <property name="scanning" type="b" access="read"/>
+    <signal name="stateChanged">
+      <arg type="i" direction="out"/>
+    </signal>
+    <signal name="linkChanged">
+      <arg type="i" direction="out"/>
+    </signal>
+    <signal name="networkAdded">
+      <arg type="o" direction="out"/>
+    </signal>
+    <signal name="networkRemoved">
+      <arg type="o" direction="out"/>
+    </signal>
+    <signal name="networkConnected">
+      <arg type="o" direction="out"/>
+    </signal>
+    <signal name="disconnected">
+    </signal>
+    <signal name="bssFound">
+      <arg type="o" direction="out"/>
+    </signal>
+    <signal name="bssRemoved">
+      <arg type="o" direction="out"/>
+    </signal>
+    <signal name="scanningChanged">
+      <arg type="b" direction="out"/>
+    </signal>
+    <method name="enable">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="disable">
+    </method>
+    <method name="addNetwork">
+      <arg type="o" direction="out"/>
+      <arg name="ssid" type="s" direction="in"/>
+      <arg name="properties" type="a{sv}" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantMap"/>
+    </method>
+    <method name="getNetwork">
+      <arg type="ao" direction="out"/>
+      <arg name="properties" type="a{sv}" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="getBSS">
+      <arg type="ao" direction="out"/>
+      <arg name="properties" type="a{sv}" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantMap"/>
+    </method>
+    <method name="scan">
+      <arg name="active" type="b" direction="in"/>
+    </method>
+    <method name="scan">
+    </method>
+    <method name="reconnect">
+    </method>
+    <method name="reassosiate">
+    </method>
+    <method name="disconnect">
+    </method>
+    <method name="flushBSSCache">
+      <arg name="age" type="u" direction="in"/>
+    </method>
+    <method name="addBlob">
+      <arg name="name" type="s" direction="in"/>
+      <arg name="blob" type="ay" direction="in"/>
+    </method>
+    <method name="removeBlob">
+      <arg name="name" type="s" direction="in"/>
+    </method>
+    <method name="getBlob">
+      <arg type="ay" direction="out"/>
+      <arg name="name" type="s" direction="in"/>
+      <arg name="blob" type="ay" direction="in"/>
+    </method>
+  </interface>
+</node>
