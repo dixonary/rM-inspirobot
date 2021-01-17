@@ -1,2 +1,2 @@
 # rM-inspirobot
-Inspirational quotes on your lock screen.
+Inspirational quotes on your reMarkable suspend screen.
